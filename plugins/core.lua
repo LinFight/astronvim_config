@@ -74,4 +74,19 @@ return {
   --     }, { mode = "n", prefix = "<leader>" })
   --   end,
   -- },
+  {
+    "nvim-telescope/telescope.nvim",
+    config = function(plugin, opts)
+      require "plugins.configs.telescope"(plugin, opts) -- include the default astronvim config that calls the setup call
+      require("telescope").setup {
+        defaults = {
+          mappings = {
+            n = {
+              ["l"] = require("telescope.actions").select_default,
+            },
+          },
+        },
+      }
+    end,
+  },
 }
