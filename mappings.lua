@@ -47,5 +47,14 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+    ["<esc>"] = { [[<C-\><C-n>]] },
+    ["<C-w>"] = { [[<C-\><C-n><C-w>]] },
+
+    -- ["jk"   ] = [[<C-\><C-n>]], opts)
+    -- ["<C-h>"] = [[<Cmd>wincmd h<CR>]], opts)
+    -- ["<C-j>"] = [[<Cmd>wincmd j<CR>]], opts)
+    -- ["<C-k>"] = [[<Cmd>wincmd k<CR>]], opts)
+    -- ["<C-l>"] = [[<Cmd>wincmd l<CR>]], opts)
+    -- ["<C-w>"] = [[<C-\><C-n><C-w>]], opts)
   },
 }
