@@ -57,4 +57,5 @@ return {
     -- ["<C-l>"] = [[<Cmd>wincmd l<CR>]], opts)
     -- ["<C-w>"] = [[<C-\><C-n><C-w>]], opts)
   },
+  i = {},
 }
