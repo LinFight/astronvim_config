@@ -1,4 +1,5 @@
 return {
+  -- move plugin
   {
     "folke/flash.nvim",
     event = "VeryLazy",
@@ -18,10 +19,22 @@ return {
       -- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
   },
+
+  -- Image show in kitty
+  {
+    "edluffy/hologram.nvim",
+    config = {
+      auto_display = true, -- WIP automatic markdown image display, may be prone to breaking
+    },
+    ft = { "markdown" },
+  },
+
+  -- nvcahd style statusline
   {
     "rebelot/heirline.nvim",
     opts = function(_, opts)
       local status = require "astronvim.utils.status"
+      opts.tabline = nil -- remove tabline
       opts.statusline = {
         -- default highlight for the entire statusline
         hl = { fg = "fg", bg = "bg" },
@@ -130,4 +143,39 @@ return {
       return opts
     end,
   },
+
+  -- elixir tools include 3 lsp
+  -- nextls
+  -- elixirls
+  -- credo
+  -- {
+  --   "elixir-tools/elixir-tools.nvim",
+  --   version = "*",
+  --   -- event = { "BufReadPre", "BufNewFile" },
+  --   ft = { "elixir" },
+  --   config = function()
+  --     local elixir = require "elixir"
+  --     local elixirls = require "elixir.elixirls"
+  --
+  --     elixir.setup {
+  --       nextls = { enable = true },
+  --       credo = { enable = true },
+  --       elixirls = {
+  --         enable = true,
+  --         settings = elixirls.settings {
+  --           dialyzerEnabled = false,
+  --           enableTestLenses = false,
+  --         },
+  --         on_attach = function(client, bufnr)
+  --           -- vim.keymap.set("n", "<space>fp", ":ElixirFromPipe<cr>", { buffer = true, noremap = true })
+  --           -- vim.keymap.set("n", "\\", ":ElixirToPipe<cr>", { buffer = true, noremap = true })
+  --           -- vim.keymap.set("v", "<space>em", ":ElixirExpandMacro<cr>", { buffer = true, noremap = true })
+  --         end,
+  --       },
+  --     }
+  --   end,
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --   },
+  -- },
 }

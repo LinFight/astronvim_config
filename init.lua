@@ -32,11 +32,12 @@ return {
       -- control auto formatting on save
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
-        allow_filetypes = { -- enable format on save for specified filetypes only
-          -- "go",
-        },
+        -- allow_filetypes = { -- enable format on save for specified filetypes only
+        --   -- "go",
+        -- },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
+          "markdown",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
@@ -50,23 +51,19 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      "lexical",
     },
     config = {
-      emmet_ls = {
-        filetypes = {
-          "css",
-          "eruby",
-          "html",
-          "javascript",
-          "javascriptreact",
-          "less",
-          "sass",
-          "scss",
-          "pug",
-          "typescriptreact",
-        },
-      },
+      lexical = function()
+        return {
+          cmd = { "/Users/jintian/app/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
+          filetypes = { "elixir", "eelixir", "heex" },
+          settings = {},
+          root_dir = function(fname)
+            return require("lspconfig.util").root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
+          end,
+        }
+      end,
     },
   },
 
