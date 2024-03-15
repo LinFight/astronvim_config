@@ -19,18 +19,34 @@ return {
     -- },
 
     -- mappings seen under group name "Buffer"
-    ["<leader>bD"] = {
-      function()
-        require("astronvim.utils.status").heirline.buffer_picker(
-          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
-        )
-      end,
-      desc = "Pick to close",
-    },
+    -- ["<leader>bD"] = {
+    --   function()
+    --     require("astronvim.utils.status").heirline.buffer_picker(
+    --       function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+    --     )
+    --   end,
+    --   desc = "Pick to close",
+    -- },
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     -- ["<leader>b"] = { name = "Buffers" },
     ["<leader>b"] = false,
+    ["<leader>bb"] = false,
+    ["<leader>b\\"] = false,
+    ["<leader>b|"] = false,
+    ["<leader>bc"] = false,
+    ["<leader>bC"] = false,
+    ["<leader>bd"] = false,
+    ["<leader>bD"] = false,
+    ["<leader>bl"] = false,
+    ["<leader>bp"] = false,
+    ["<leader>br"] = false,
+    ["<leader>bs"] = false,
+    ["<leader>bse"] = false,
+    ["<leader>bsi"] = false,
+    ["<leader>bsm"] = false,
+    ["<leader>bsp"] = false,
+    ["<leader>bsr"] = false,
     [";"] = { ":" },
     -- ["f"] = {
     --   function()

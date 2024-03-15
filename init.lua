@@ -64,6 +64,53 @@ return {
           end,
         }
       end,
+      tailwindcss = function()
+        return {
+          root_dir = require("lspconfig.util").root_pattern(
+            "tailwind.config.js",
+            "tailwind.config.ts",
+            "postcss.config.js",
+            "postcss.config.ts",
+            "package.json",
+            "node_modules",
+            ".git",
+            "mix.exs"
+          ),
+          filetypes = { "html", "elixir", "eelixir", "heex" },
+          init_options = {
+            userLanguages = {
+              elixir = "html-eex",
+              eelixir = "html-eex",
+              heex = "html-eex",
+            },
+          },
+          settings = {
+            tailwindCSS = {
+              experimental = {
+                classRegex = {
+                  'class[:]\\s*"([^"]*)"',
+                },
+              },
+            },
+          },
+        }
+      end,
+      emmet_language_server = function()
+        return {
+          filetypes = {
+            "html",
+            "typescriptreact",
+            "javascriptreact",
+            "css",
+            "sass",
+            "scss",
+            "less",
+            "elixir",
+            "eelixir",
+            "heex",
+          },
+        }
+      end,
     },
   },
 
@@ -107,6 +154,11 @@ return {
 
     -- if you only want these mappings for toggle term use term://*toggleterm#* instead
     -- vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
+
+    -- config tailwindcss
+    require("cmp").config.formatting = {
+      format = require("tailwindcss-colorizer-cmp").formatter,
+    }
   end,
   -- add new user interface icon
   icons = {
