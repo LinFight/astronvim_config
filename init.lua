@@ -51,19 +51,19 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "lexical",
+      "lexical",
     },
     config = {
-      -- lexical = function()
-      --   return {
-      --     cmd = { "/Users/jintian/app/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
-      --     filetypes = { "elixir", "eelixir", "heex" },
-      --     settings = {},
-      --     root_dir = function(fname)
-      --       return require("lspconfig.util").root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
-      --     end,
-      --   }
-      -- end,
+      lexical = function()
+        return {
+          cmd = { "/Users/jintian/app/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
+          filetypes = { "elixir", "eelixir", "heex" },
+          settings = {},
+          root_dir = function(fname)
+            return require("lspconfig.util").root_pattern("mix.exs", ".git")(fname) or vim.loop.os_homedir()
+          end,
+        }
+      end,
       tailwindcss = function()
         return {
           root_dir = require("lspconfig.util").root_pattern(
@@ -154,11 +154,6 @@ return {
 
     -- if you only want these mappings for toggle term use term://*toggleterm#* instead
     -- vim.cmd "autocmd! TermOpen term://* lua set_terminal_keymaps()"
-
-    -- config tailwindcss
-    require("cmp").config.formatting = {
-      format = require("tailwindcss-colorizer-cmp").formatter,
-    }
   end,
   -- add new user interface icon
   icons = {
