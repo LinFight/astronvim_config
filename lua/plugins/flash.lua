@@ -4,15 +4,18 @@ return {
     event = "VeryLazy",
     ---@type Flash.Config
     opts = {
+      label = {
+        uppercase = false,
+      },
       modes = {
         char = {
           enabled = false,
         },
       },
     },
-  -- stylua: ignore
-  keys = {
-    { "f", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-  },
+    keys = {
+      { "f", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+    },
   },
 }
