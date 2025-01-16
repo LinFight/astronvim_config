@@ -6,6 +6,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.elixir-phoenix" },
+  -- { import = "astrocommunity.pack.python" },
   -- import/override with your plugins folder
 }
