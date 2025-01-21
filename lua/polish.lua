@@ -17,3 +17,8 @@ vim.filetype.add {
 
 -- Prepend mise shims to PATH
 vim.env.PATH = vim.env.HOME .. "/.local/share/mise/shims:" .. vim.env.PATH
+
+-- 启用软换行
+vim.opt.wrap = true -- 启用软换行
+vim.opt.linebreak = true -- 在单词边界处换行
+vim.opt.breakindent = true -- 使换行后的行有缩进
