@@ -6,6 +6,8 @@ A template for getting started with [AstroNvim](https://github.com/AstroNvim/Ast
 
 ## 🛠️ Installation
 
+### MacOS
+
 #### Make a backup of your current nvim and shared folder
 
 ```shell
@@ -39,5 +41,27 @@ git clone https://github.com/LinFight/astronvim_config ~/.config/nvim
 #### Start Neovim
 
 ```shell
+nvim
+```
+
+### Windows
+
+#### Make a backup of your current nvim and shared folder and clean nvim folder
+
+```powershell
+Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
+Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
+```
+
+#### Clone the repository
+
+```shell
+git clone https://github.com/LinFight/astronvim_config $env:LOCALAPPDATA\nvim
+Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse -Force
+```
+
+#### Start Neovim
+
+```powershell
 nvim
 ```
