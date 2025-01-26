@@ -39,6 +39,8 @@ return {
     servers = {
       -- "pyright"
       "ruby_lsp",
+      "html",
+      "emmet_ls",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -47,7 +49,13 @@ return {
       ruby_lsp = {
         mason = false,
         cmd = { "ruby-lsp" },
-        filetypes = { "ruby" },
+        filetypes = { "ruby", "eruby" },
+      },
+      html = {
+        filetypes = { "html", "heex" },
+      },
+      emmet_ls = {
+        filetypes = { "html", "heex", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact" },
       },
     },
     -- customize how language servers are attached
