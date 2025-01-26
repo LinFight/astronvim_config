@@ -6,7 +6,10 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
-  -- { import = "astrocommunity.pack.elixir-phoenix" },
+  { import = "astrocommunity.pack.elixir-phoenix" },
+  { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.completion.blink-cmp" },
+  -- { import = "astrocommunity.completion.coq_nvim" },
   -- { import = "astrocommunity.pack.python" },
   -- import/override with your plugins folder
 }
