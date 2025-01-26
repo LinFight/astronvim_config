@@ -112,10 +112,6 @@ return {
     on_attach = function(client, bufnr)
       -- this would disable semanticTokensProvider for all clients
       -- client.server_capabilities.semanticTokensProvider = nil
-      -- vim.api.nvim_create_autocmd("FileType", {
-      --   pattern = "aerial",
-      --   callback = function() vim.keymap.set("n", "l", "<CR>", { buffer = true, noremap = true }) end,
-      -- })
     end,
   },
 }
