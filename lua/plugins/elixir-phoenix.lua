@@ -1,5 +1,5 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 return {
-  { import = "astrocommunity.pack.tailwindcss" },
   {
     "williamboman/mason-lspconfig.nvim",
     optional = true,
