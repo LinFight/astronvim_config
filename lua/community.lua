@@ -6,6 +6,8 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.prisma" },
   { import = "astrocommunity.pack.elixir-phoenix" },
   { import = "astrocommunity.pack.html-css" },
   -- { import = "astrocommunity.completion.blink-cmp" },
