@@ -149,9 +149,18 @@ return {
   },
   specs = {
     {
+      "chrisgrieser/nvim-scissors",
+      dependencies = "nvim-telescope/telescope.nvim",
+      opts = {
+        snippetDir = vim.fn.stdpath "config" .. "/snippets",
+      },
+    },
+    {
       "L3MON4D3/LuaSnip",
       optional = true,
+      version = "v2.*",
       specs = { { "Saghen/blink.cmp", opts = { snippets = { preset = "luasnip" } } } },
+      config = function() require("luasnip.loaders.from_vscode").lazy_load { paths = "./snippets" } end,
     },
     {
       "AstroNvim/astrolsp",
