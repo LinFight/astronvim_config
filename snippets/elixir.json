@@ -1,8 +1,16 @@
 {
   "pipe": {
-    "prefix": "p",
+    "prefix": "pp",
     "body": [
       "|> $1"
+    ]
+  },
+  "for-elixir": {
+    "prefix": "forstream",
+    "body": [
+      "<div :for={ {dom_id, $1} <- @$2 } id={\"$1-#{dom_id}\"} class=\"$3\">",
+      "",
+      "</div>"
     ]
   }
 }

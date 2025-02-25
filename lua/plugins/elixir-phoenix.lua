@@ -1,11 +1,9 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 return {
   {
     "williamboman/mason-lspconfig.nvim",
     optional = true,
     opts = function(_, opts)
-      -- opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "elixirls" })
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "lexical" })
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, { "elixirls" })
     end,
   },
   {
@@ -38,6 +36,16 @@ return {
               },
             },
           },
+        },
+        -- 添加htmllsp配置
+        -- html = {
+        --   filetypes = { "html", "heex", "elixir" }, -- 确保支持 heex 和 elixir
+        --   init_options = {
+        --     provideFormatter = true,
+        --   },
+        -- },
+        emmet_ls = {
+          filetypes = { "html", "heex", "elixir" }, -- 确保支持 heex 和 elixir
         },
       },
     },

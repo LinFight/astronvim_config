@@ -1,16 +1,24 @@
 {
-  "for": {
-    "prefix": "for",
+  "for-heex": {
+    "prefix": "forstream",
     "body": [
-      "<% for $1 <- @$2 do %>",
+      "<div :for={ {dom_id, $1} <- @$2 } id={\"$1-#{dom_id}\"} class=\"$3\">",
       "",
-      "<% end %>"
+      "</div>"
     ]
   },
   "=": {
     "prefix": "=",
     "body": [
       "<%= $1 %>"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "<div :if{ $1 } class=\"$2\"",
+      "",
+      "</div>"
     ]
   }
 }
